@@ -15,7 +15,7 @@ It's a small tool, which automaticly creates `.res` code for your SGDK project
 
 > Every file name inside folders: `gfx`, `images`, `sounds`, `music`, `sprites`, `tilesets`, can affect on final code.
 1. If first symbol is `_` (for example `_randomSpr.png`), then, file ignored.
-2. In `sprites` folder, by renaming filename, you can change `tile_res_x`, `tile_res_y`, `time_to_play_on_frame`:
+2. In `sprites` folder, by renaming filename, you can change `tile_res_x`, `tile_res_y`, `time_to_play_1_frame`:
 
 ```
 randomSpr-2_2_5.png
