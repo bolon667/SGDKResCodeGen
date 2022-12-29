@@ -1,2 +1,2 @@
-# SGDKResCodeGen
-Small tool, which automatically creates .res code fro your SGDK project.
+A sample command-line application with an entrypoint in `bin/`, library code
+in `lib/`, and example unit test in `test/`.

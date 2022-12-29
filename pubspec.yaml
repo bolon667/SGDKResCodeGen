@@ -1,0 +1,33 @@
+name: vector_victor
+description: A sample command-line application.
+version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies:
+  image: ^3.2.0
+  requests: ^4.4.1
+  http: ^0.13.4
+  io: ^1.0.3
+  html: ^0.15.0
+  steam_auth: ^1.0.7
+  file_picker: ^4.6.1
+  flame: ^1.2.0
+  quantize_dart: ^1.0.3
+  provider:
+  flutter_riverpod: ^1.0.4
+  get_it: ^7.2.0
+  expandable_reorderable_list: ^0.0.3
+  reorderables: ^0.5.0
+  drag_and_drop_lists: ^0.3.2+2
+  shared_preferences: ^2.0.15
+  google_fonts: ^2.1.0 
+  js: ^0.6.2
+  chaquopy: ^0.0.16
+  path_provider: ^2.0.11
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0
