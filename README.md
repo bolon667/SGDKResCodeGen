@@ -20,10 +20,11 @@ It's a small tool, which automaticly creates `.res` code for your SGDK project
 ```
 randomSpr-2_2_5.png
 ````
+which translates into
 
-- tile_res_x = 2
-- tile_res_y = 2
-- time_to_play_on_frame = 5
+```
+SPRITE spr_randomSpr "sprites/randomSpr-2_2_5.png" 2 2 FAST 5
+```
 
 So, you need to add a `-` to change attributes.
 
