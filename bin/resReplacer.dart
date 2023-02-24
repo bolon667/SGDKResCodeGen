@@ -110,9 +110,9 @@ Future<String> genGfxResCode() async {
     String fileNameNoExt =
         filePath.split('.')[0].replaceAll("/", "_").replaceAll("\\", "_");
     result += """
-PALETTE ${fileNameNoExt}_pal "gfx/${filePath}"
-TILESET ${fileNameNoExt}_tileset "gfx//${filePath}" BEST ALL
-MAP ${fileNameNoExt}_map "gfx/${filePath}" ${fileNameNoExt}_tileset BEST 0
+PALETTE pal_${fileNameNoExt} "gfx/${filePath}"
+TILESET tileset_${fileNameNoExt} "gfx/${filePath}" BEST ALL
+MAP map_${fileNameNoExt} "gfx/${filePath}" tileset_${fileNameNoExt} BEST 0
 
 """;
   }
