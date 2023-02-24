@@ -49,7 +49,7 @@ PALETTE pal_Room01 "gfx/Room01.png"
 TILESET tileset_Room01 "gfx/Room01.png" BEST ALL
 MAP map_Room01 "gfx/Room01.png" tileset_Room01 BEST 0
 ```
-In v0.2 you use 1.png like pic names, in v0.1 you can't
+In v0.2 you can use 1.png like pic names, in v0.1 you can't
 
 ## License
 
