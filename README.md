@@ -8,7 +8,7 @@ It's a small tool, which automaticly creates `.res` code for your SGDK project
 
 - Download latest exe from `Releases` on github
 - Put it in `res` folder inside your sgdk project
-- Run program once, it will create folders `gfx`, `images`, `sounds`, `music`, `sprites`, `tilesets`, `palette`, and .res files.
+- Run program once, it will create folders `gfx`, `images`, `sounds`, `music`, `sprites`, `tilesets`, `palette`, and `.res` files.
 
 ## How to use
 
