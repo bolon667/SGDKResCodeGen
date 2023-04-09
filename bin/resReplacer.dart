@@ -30,6 +30,9 @@ resReplacer() async {
   //sounds.res replace
   final String sounds = await genSoundsResCode();
   File("$curResFolder/sounds.res").writeAsStringSync(sounds);
+  //palette.res replace
+  final String palette = await genPaletteResCode();
+  File("$curResFolder/palette.res").writeAsStringSync(palette);
 }
 
 Future<String> genMusicResCode() async {
@@ -258,6 +261,42 @@ Future<String> genImagesResCode() async {
     final List<int> imgRes =
         await getImageResolution("$tempRootPath/$filePath");
     result += 'IMAGE img_$nameInCode "images/$filePath" $compressionType\n';
+  }
+  return result;
+}
+
+Future<String> genPaletteResCode() async {
+  print("Replacing images.res code");
+  String result = "";
+  final String tempRootPath = "$curResFolder/palette";
+  final dir = Directory(
+    tempRootPath,
+  );
+  if (!(await dir.exists()))
+    await Directory(tempRootPath).create(recursive: true);
+  final files = dir.listSync(recursive: true);
+  for (var fileOrDir in files) {
+    if (fileOrDir is Directory) continue;
+
+    String filePath =
+        fileOrDir.path.substring(tempRootPath.length + 1).replaceAll("\\", "/");
+    final String fileExt = filePath.split(".").last;
+    if (fileExt != "png" && fileExt != "bmp" && fileExt != "pal") continue;
+    String fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
+    //If palette is "hidden", then ignore
+    if (fileName[0] == "_") continue;
+
+    String fileNameNoExt =
+        filePath.split('.')[0].replaceAll("/", "_").replaceAll("\\", "_");
+    late String nameInCode;
+    final String onlyFileName = fileNameNoExt.split("/").last;
+    if (onlyFileName.contains("-")) {
+      nameInCode = onlyFileName.split("-")[0].replaceAll("-", "_");
+      nameInCode = nameInCode.replaceAll(" ", "_");
+    } else {
+      nameInCode = onlyFileName.replaceAll(" ", "_");
+    }
+    result += 'PALETTE pal_$nameInCode "palette/$filePath"\n';
   }
   return result;
 }
