@@ -36,20 +36,20 @@ SPRITE spr_Debug_target "sprites/Debug/target-1_1_2.png" 1 1 FAST 2
 
 3. If you don't specify attributes, then the sprite resolution in tiles, is calculated automatically 
 
-## Differences between v0.1 and older versions.
+## Differences between v0.1 and last versions.
 In v0.1 **gfx.res** code looks like this
 ```
 PALETTE Room01_pal "gfx/Room01.png"
 TILESET Room01_tileset "gfx/Room01.png" BEST ALL
 MAP Room01_map "gfx/Room01.png" Room01_tileset BEST 0
 ```
-In older versions looks like this
+In last versions looks like this
 ```
 PALETTE pal_Room01 "gfx/Room01.png"
 TILESET tileset_Room01 "gfx/Room01.png" BEST ALL
 MAP map_Room01 "gfx/Room01.png" tileset_Room01 BEST 0
 ```
-In older versions you can use 1.png like pic names, in v0.1 you can't
+In last versions you can use 1.png like pic names, in v0.1 you can't
 
 ## License
 
