@@ -50,14 +50,18 @@ Future<String> genMusicResCode() async {
     String filePath =
         fileOrDir.path.substring(tempRootPath.length + 1).replaceAll("\\", "/");
     final String fileExt = filePath.split(".").last;
-    if (fileExt != "vgm") continue;
+    if (fileExt != "vgm" && fileExt != "wav") continue;
     String fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
     //If image is "hidden", then ignore
     if (fileName[0] == "_") continue;
 
     String fileNameNoExt =
         filePath.split('.')[0].replaceAll("/", "_").replaceAll("\\", "_");
-    result += 'XGM mus_$fileNameNoExt "music/$filePath"\n';
+    if (fileExt == "vgm") {
+      result += 'XGM mus_$fileNameNoExt "music/$filePath"\n';
+    } else if (fileExt == "wav") {
+      result += 'WAV mus_$fileNameNoExt "music/$filePath"\n';
+    }
   }
   return result;
 }
