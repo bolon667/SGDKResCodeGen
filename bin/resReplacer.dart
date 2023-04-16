@@ -57,10 +57,25 @@ Future<String> genMusicResCode() async {
 
     String fileNameNoExt =
         filePath.split('.')[0].replaceAll("/", "_").replaceAll("\\", "_");
+    String nameInCode;
+    final String onlyFileName = fileNameNoExt.split("/").last;
+    List<String> additionValues = [];
+    if (onlyFileName.contains("-")) {
+      additionValues = onlyFileName.split("-").last.split("_");
+      nameInCode = onlyFileName.split("-")[0].replaceAll("-", "_");
+      nameInCode = nameInCode.replaceAll(" ", "_");
+    } else {
+      nameInCode = onlyFileName.replaceAll(" ", "_");
+    }
+    String addString = "";
+    for (String s in additionValues) {
+      addString += " $s";
+    }
+
     if (fileExt == "vgm") {
-      result += 'XGM mus_$fileNameNoExt "music/$filePath"\n';
+      result += 'XGM mus_$nameInCode "music/$filePath"$addString\n';
     } else if (fileExt == "wav") {
-      result += 'WAV mus_$fileNameNoExt "music/$filePath"\n';
+      result += 'WAV mus_$nameInCode "music/$filePath"$addString\n';
     }
   }
   return result;
