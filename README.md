@@ -3,6 +3,8 @@
 ## About
 
 It's a small tool, which automaticly creates `.res` code for your SGDK project
+![SGDKResCodeGen_logo](https://github.com/bolon667/SGDKResCodeGen/blob/main/gitPics/SGDKResCodeGen_logo.jpg)
+
 
 ## Quick Start
 
